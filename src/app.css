@@ -1,19 +1,112 @@
 .header{
     width: 100%;
-    background-color: #263238;
+    background-color: #151D3B;
     text-align: center;
-    padding: 10px;
+    padding: 20px 0px 10px;
+}
+
+.body{
+	position: relative;
+	width: 100%;
+}
+.modalDelete{
+	width: 100%;
+	height: 100vh;
+	background-color: #49494983;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modalDelete .conteudo-modal{
+	background-color: #EEE;
+	margin: 0 auto;
+	border-radius: 10px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+
+
+	@media (max-width:550px) {
+		padding: 30px 20px;
+		margin: 0px 10px;
+	}
+
+}
+.modalDelete .conteudo-modal span{
+	font-size: 2rem;
+	margin: 20px 0px;
+
+	@media (max-width:550px) {
+		font-size: 1.3rem;
+	}
+}
+.modalDelete .conteudo-modal h1{
+	font-size: 1.3rem;
+	margin:5px 0;
+	@media (max-width:550px) {
+		font-size: 1rem;
+	}
+}
+.modalDelete .conteudo-modal h3{
+	color: #176B87;
+	text-align: center;
+	font-size: 1.5rem;
+	@media (max-width:550px) {
+		font-size: 1.1rem;
+	}
+}
+.modalDelete .conteudo-modal h4{
+	color: #176B87;
+	font-size: 1.5rem;
+	text-align: center;
+	@media (max-width:550px) {
+		font-size: 1.1rem;
+	}
+}
+.modalDelete .conteudo-modal .deletarList{
+	background-color: #D80032;
+	padding: 10px 20px;
+	font-weight: bold;
+	color: #FFF;
+	cursor: pointer;
+	margin: 20px 0px;
+	border: none;
+	transition: all .3s ease-in-out;
+	border-radius: 10px;
+
+	&:hover{
+		background-color: #d80032e7;
+	}
+	@media (max-width:550px) {
+		padding: 5px 10px;
+	}
+}
+.modalDelete .conteudo-modal .fechar{
+	padding: 10px;
+	border-bottom-left-radius: 40%;
+	border: none;
+	background-color: #F00;
+	color: #FFF;
+	font-weight: bold;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-top-right-radius: 0px;
 }
 
 .header h1{
     color: #78909C;
 }
-
 .cadastro{
-    width: 100%;
-    background-color:#E0E0E0;
-    display: flex;
-    flex-direction: column;
+	width: 100%;
 }
 .cadastro span{
 	text-align: end;
@@ -24,26 +117,33 @@
 }
 .cadastro button{
     width: 300px;
-    padding: 7px;
+    padding: 10px;
     border-radius: 3px;
     cursor: pointer;
-    background-color: #5C6BC0;
+    background-color: #151D3B;
     color: #FFF;
     font-size: .9rem;
     transition: all .3s ease-in-out;
 	margin: 15px auto;
+	border-radius: 5px;
+	border: none;
 
     &:hover{
-        background-color: #5c6bc0bc;
+        background-color: #151d3be3;
     }
+	@media (max-width:550px) {
+		width: 200px;
+	}
 
 }
 .btncadastro{
 	padding: 10px 20px;
 	margin: 20px 0 10px 20px;
 	cursor: pointer;
-	background-color: #1A237E;
+	background-color: #151D3B;
 	color: #FFF;
+	border: none;
+	border-radius: 5px;
 	
 }
 .cadastro .inputs{
@@ -61,6 +161,10 @@
     padding: 5px;
     outline-color:#1A237E ;
     font-size: 1.1rem;
+
+	@media (max-width:550px) {
+		width: 140px;
+	}
 }
 .cadastro .inputs .inp label{
     margin: 5px 0px 3px 0px;
@@ -75,6 +179,7 @@
 }
 .container  h2{
     text-align: end;
+	font-size: 1.1rem;
     color: #37474F;
 }
 .container .tabela{
@@ -87,35 +192,69 @@
 	justify-content: space-around;
 	margin: 5px 0px;
 }
-
-.buDelete ,.buPagar{
-	padding: 10px;
-	cursor: pointer;
-	color: #FFF;
+.btns{
+	width: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	transition: all .2s ease-in-out;
 }
 .buDelete{
-	background-color:#F44336 ;
+	font-size: 1.5rem;
+	cursor: pointer;	
+	transition: all .2s ease-in-out;
+
+	&:hover{
+		transform: scale(1.1);
+	}
 }
 .buPagar{
 	background-color: #4CAF50;
+	font-weight: bolder;
+	color: #FFF;
+	border: none;
+	cursor: pointer;
+	font-weight: normal;
+	border-radius: 5px;
+	transition: all .2s ease-in-out;
+
+	&:hover{
+		background-color: #4caf4fd0;
+	}
+}
+.baixa{
+	color: green;
+	font-size: 1rem;
+}
+.alerta{
+	width: 0px;
+	height: 70px;
+	background-color: #C5E1A5;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	transition: all .3s ease-in-out;
+	overflow: hidden;
+}
+.alerta h1{
+	font-size: 1.3rem;
+	color: #33691E;
+}
+
+.AlertaDelete h1{
+	font-size: 1.3rem;
+	color: red;
 }
 
 
-table a:link {
-	color: #666;
-	font-weight: bold;
-	text-decoration:none;
-}
-table a:visited {
-	color: #999999;
-	font-weight:bold;
-	text-decoration:none;
-}
-table a:active,
-table a:hover {
-	color: #bd5a35;
-	text-decoration:underline;
-}
+
+
 table {
 	font-family:Arial, Helvetica, sans-serif;
 	color:#666;
@@ -166,7 +305,7 @@ table td:first-child {
 	padding-left:20px;
 	border-left: 0;
 }
-table td:nth-last-child(-n+2){
+table td:nth-last-child(-n+1){
 	background: transparent;
 }
 table td {
@@ -176,6 +315,7 @@ table td {
 	border-left: 1px solid #e0e0e0;
     font-size: 1rem;
     color: #37474F;
+	font-weight: 600;
 
 	background: #fafafa;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
@@ -203,4 +343,83 @@ table tr:hover td {
 	background: #f2f2f2;
 	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);
+}
+
+
+@media (max-width:700px) {
+	table th{
+		font-size: .7rem;
+		padding: 10px;
+	}
+	table{
+		padding: 5px;
+	}
+	table td{
+		font-size: .8rem;
+		padding: 5px;
+	}
+	.btns{
+		width: 120px;
+		padding: 5px 0px;
+	}
+	.buDelete{
+		font-size: 1rem;
+	}
+
+	.alerta , .AlertaDelete{
+		height: 40px;
+		right: 2%;
+	}
+	.alerta h1 , .AlertaDelete h1{
+		font-size: .9rem;
+	}
+	.header h1{
+		font-size: 1.3rem;
+	}
+}
+
+
+@media (max-width:410px) {
+	.header h1{
+		font-size: 1rem;
+	}
+	.container{
+		margin: 10px 0px;
+	}
+	.container h1{
+		font-size: 1rem;
+		margin-left: 10px;
+	}
+	.container h2{
+		font-size: .7rem;
+		margin-right: 10px;
+	}
+	.btns{
+		width: 70px;
+		padding: 10px 0;
+		flex-direction: column;
+	}
+	.buDelete{
+		font-size: .7rem;
+		margin-bottom: 10px;
+	}
+	table{
+		padding: 0;
+	}
+	.btncadastro{
+		font-size: .7rem;
+	}
+	.cadastro span{
+		font-size: 1rem;
+		margin: 0px 15px;
+	}
+
+	.alerta , .AlertaDelete{
+		height: 40px;
+		right: 0%;
+	}
+	.alerta h1 , .AlertaDelete h1{
+		font-size: .7rem;
+	}
+
 }
